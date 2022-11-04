@@ -1,6 +1,6 @@
 {
   "name": "nuxt-content-without-db-hash",
-  "version": "1.15.3",
+  "version": "1.16.0",
   "repository": "nuxt/content",
   "license": "MIT",
   "types": "types/index.d.ts",
