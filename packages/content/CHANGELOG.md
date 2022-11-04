@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.15.2](https://github.com/nuxt/content/compare/@nuxt/content@1.15.1...@nuxt/content@1.15.2) (2022-11-04)
+
+**Note:** Version bump only for package @nuxt/content
+
+
+
+
+
 ## [1.15.1](https://github.com/nuxt/content/compare/@nuxt/content@1.15.0...@nuxt/content@1.15.1) (2021-11-17)
 
 
