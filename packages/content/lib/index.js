@@ -2,7 +2,6 @@ const { join, resolve } = require('path')
 const fs = require('graceful-fs').promises
 const defu = require('defu')
 const logger = require('consola').withScope('@nuxt/content')
-const hash = require('hasha')
 
 const middleware = require('./middleware')
 const Database = require('./database')
@@ -182,21 +181,11 @@ module.exports = async function (moduleOptions) {
 
   /* istanbul ignore if */
   if (isSSG) {
-    // Create a hash to fetch the database
-    const dbHash = hash(JSON.stringify(database.items._data)).substr(0, 8)
-    // Pass the hash to the publicRuntimeConfig to be used in client side
-    if (this.options.publicRuntimeConfig) {
-      this.options.publicRuntimeConfig.content = { dbHash }
-    } else {
-      this.nuxt.hook('vue-renderer:ssr:context', (renderContext) => {
-        renderContext.nuxt.content = { dbHash }
-      })
-    }
     // Write db.json
     this.nuxt.hook('generate:distRemoved', async () => {
       const dir = resolve(this.options.buildDir, 'dist', 'client', 'content')
 
-      await database.save(dir, `db-${dbHash}.json`)
+      await database.save(dir, 'db.json')
     })
 
     // Add client plugin
