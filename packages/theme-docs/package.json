@@ -30,5 +30,6 @@
   "devDependencies": {
     "nuxt": "^2.15.2"
   },
-  "types": "./src/index.d.ts"
+  "types": "./src/index.d.ts",
+  "gitHead": "c71bfa2e63341e6652154d2a5a60ffe0c87de507"
 }
